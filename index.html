@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <div>
+            <h1>CALCULATOR</h1>
+        </div>
+        <input type="text" id="Myresult" placeholder="0">
+
+        <div>
+            <button class="equal" onclick="DeleteMe()">AC</button>
+            <button class="equal" onclick="Del()">DEL</button>
+            <button class="equal" onclick="Calculator('%')">%</button>
+            <button class="equal" onclick="Calculator('/')">/</button>
+        </div>
+        <div>
+            <button onclick="Calculator('7')">7</button>
+            <button onclick="Calculator('8')">8</button>
+            <button onclick="Calculator('9')">9</button>
+            <button class="equal" onclick="Calculator('*')">*</button>
+        </div>
+    
+        <div>
+            <button onclick="Calculator('4')">4</button>
+            <button onclick="Calculator('5')">5</button>
+            <button onclick="Calculator('6')">6</button>
+            <button class="equal" onclick="Calculator('-')">-</button>
+        </div>
+    
+        <div>
+            <button onclick="Calculator('1')">1</button>
+            <button onclick="Calculator('2')">2</button>
+            <button onclick="Calculator('3')">3</button>
+            <button class="equal" onclick="Calculator('+')">+</button>
+        </div>
+    
+        <div>
+            <button onclick="Calculator('00')">00</button>
+            <button onclick="Calculator('0')">0</button>
+            <button onclick="Calculator('.')">.</button>
+            <button class="sum" onclick="Answer()">=</button>
+        </div>
+    </div>
+    
+
+
+
+    <script>
+        function DeleteMe(){
+            document.getElementById("Myresult").value =""
+        }
+        function Del() {
+            var input = document.getElementById("Myresult");
+            input.value = input.value.substring(0, input.value.length - 1);
+        }
+        function Calculator(NewValue){
+            document.getElementById("Myresult").value += NewValue;
+        }
+        function Answer(){
+            var a = document.getElementById("Myresult").value;
+            var b = eval(a);
+            document.getElementById("Myresult").value = b
+        }
+    </script>
+
+    
+</body>
+</html>
